@@ -17,13 +17,13 @@ export const productData: ProductData[] = [
     description: "Vintage Retro? T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-01-Preview.png",
+      preview: "image/products/Product-01-Preview.png",
       model: [
-        "../assets/image/products/Product-01-Model-01.png",
-        "../assets/image/products/Product-01-Model-02.png",
-        "../assets/image/products/Product-01-Model-03.png",
+        "image/products/Product-01-Model-01.png",
+        "image/products/Product-01-Model-02.png",
+        "image/products/Product-01-Model-03.png",
       ],
-      design: "../assets/image/products/Product-01-Design.png",
+      design: "image/products/Product-01-Design.png",
     },
   },
   {
@@ -32,13 +32,13 @@ export const productData: ProductData[] = [
     description: "Just Vibin' T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-02-Preview.png",
+      preview: "image/products/Product-02-Preview.png",
       model: [
-        "../assets/image/products/Product-02-Model-01.png",
-        "../assets/image/products/Product-02-Model-02.png",
-        "../assets/image/products/Product-02-Model-03.png",
+        "image/products/Product-02-Model-01.png",
+        "image/products/Product-02-Model-02.png",
+        "image/products/Product-02-Model-03.png",
       ],
-      design: "../assets/image/products/Product-02-Design.png",
+      design: "image/products/Product-02-Design.png",
     },
   },
   {
@@ -47,13 +47,13 @@ export const productData: ProductData[] = [
     description: "Soft Bold T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-03-Preview.png",
+      preview: "image/products/Product-03-Preview.png",
       model: [
-        "../assets/image/products/Product-03-Model-01.png",
-        "../assets/image/products/Product-03-Model-02.png",
-        "../assets/image/products/Product-03-Model-03.png",
+        "image/products/Product-03-Model-01.png",
+        "image/products/Product-03-Model-02.png",
+        "image/products/Product-03-Model-03.png",
       ],
-      design: "../assets/image/products/Product-03-Design.png",
+      design: "image/products/Product-03-Design.png",
     },
   },
   {
@@ -62,13 +62,13 @@ export const productData: ProductData[] = [
     description: "Psyco T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-04-Preview.png",
+      preview: "image/products/Product-04-Preview.png",
       model: [
-        "../assets/image/products/Product-04-Model-01.png",
-        "../assets/image/products/Product-04-Model-02.png",
-        "../assets/image/products/Product-04-Model-03.png",
+        "image/products/Product-04-Model-01.png",
+        "image/products/Product-04-Model-02.png",
+        "image/products/Product-04-Model-03.png",
       ],
-      design: "../assets/image/products/Product-04-Design.png",
+      design: "image/products/Product-04-Design.png",
     },
   },
   {
@@ -77,13 +77,13 @@ export const productData: ProductData[] = [
     description: "Secrets T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-05-Preview.png",
+      preview: "image/products/Product-05-Preview.png",
       model: [
-        "../assets/image/products/Product-05-Model-01.png",
-        "../assets/image/products/Product-05-Model-02.png",
-        "../assets/image/products/Product-05-Model-03.png",
+        "image/products/Product-05-Model-01.png",
+        "image/products/Product-05-Model-02.png",
+        "image/products/Product-05-Model-03.png",
       ],
-      design: "../assets/image/products/Product-05-Design.png",
+      design: "image/products/Product-05-Design.png",
     },
   },
   {
@@ -92,13 +92,13 @@ export const productData: ProductData[] = [
     description: "Destiny The choice is yours T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-06-Preview.png",
+      preview: "image/products/Product-06-Preview.png",
       model: [
-        "../assets/image/products/Product-06-Model-01.png",
-        "../assets/image/products/Product-06-Model-02.png",
-        "../assets/image/products/Product-06-Model-03.png",
+        "image/products/Product-06-Model-01.png",
+        "image/products/Product-06-Model-02.png",
+        "image/products/Product-06-Model-03.png",
       ],
-      design: "../assets/image/products/Product-06-Design.png",
+      design: "image/products/Product-06-Design.png",
     },
   },
   {
@@ -107,13 +107,13 @@ export const productData: ProductData[] = [
     description: "Destiny T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-07-Preview.png",
+      preview: "image/products/Product-07-Preview.png",
       model: [
-        "../assets/image/products/Product-07-Model-01.png",
-        "../assets/image/products/Product-07-Model-02.png",
-        "../assets/image/products/Product-07-Model-03.png",
+        "image/products/Product-07-Model-01.png",
+        "image/products/Product-07-Model-02.png",
+        "image/products/Product-07-Model-03.png",
       ],
-      design: "../assets/image/products/Product-07-Design.png",
+      design: "image/products/Product-07-Design.png",
     },
   },
   {
@@ -122,13 +122,13 @@ export const productData: ProductData[] = [
     description: "Destiny is waiting T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-08-Preview.png",
+      preview: "image/products/Product-08-Preview.png",
       model: [
-        "../assets/image/products/Product-08-Model-01.png",
-        "../assets/image/products/Product-08-Model-02.png",
-        "../assets/image/products/Product-08-Model-03.png",
+        "image/products/Product-08-Model-01.png",
+        "image/products/Product-08-Model-02.png",
+        "image/products/Product-08-Model-03.png",
       ],
-      design: "../assets/image/products/Product-08-Design.png",
+      design: "image/products/Product-08-Design.png",
     },
   },
   {
@@ -137,13 +137,13 @@ export const productData: ProductData[] = [
     description: "Instinct  The choice is yours T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-09-Preview.png",
+      preview: "image/products/Product-09-Preview.png",
       model: [
-        "../assets/image/products/Product-09-Model-01.png",
-        "../assets/image/products/Product-09-Model-02.png",
-        "../assets/image/products/Product-09-Model-03.png",
+        "image/products/Product-09-Model-01.png",
+        "image/products/Product-09-Model-02.png",
+        "image/products/Product-09-Model-03.png",
       ],
-      design: "../assets/image/products/Product-09-Design.png",
+      design: "image/products/Product-09-Design.png",
     },
   },
   {
@@ -152,13 +152,13 @@ export const productData: ProductData[] = [
     description: "Warrior The choice is yours T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-10-Preview.png",
+      preview: "image/products/Product-10-Preview.png",
       model: [
-        "../assets/image/products/Product-10-Model-01.png",
-        "../assets/image/products/Product-10-Model-02.png",
-        "../assets/image/products/Product-10-Model-03.png",
+        "image/products/Product-10-Model-01.png",
+        "image/products/Product-10-Model-02.png",
+        "image/products/Product-10-Model-03.png",
       ],
-      design: "../assets/image/products/Product-10-Design.png",
+      design: "image/products/Product-10-Design.png",
     },
   },
   {
@@ -167,13 +167,13 @@ export const productData: ProductData[] = [
     description: "Galaxy T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-11-Preview.png",
+      preview: "image/products/Product-11-Preview.png",
       model: [
-        "../assets/image/products/Product-11-Model-01.png",
-        "../assets/image/products/Product-11-Model-02.png",
-        "../assets/image/products/Product-11-Model-03.png",
+        "image/products/Product-11-Model-01.png",
+        "image/products/Product-11-Model-02.png",
+        "image/products/Product-11-Model-03.png",
       ],
-      design: "../assets/image/products/Product-11-Design.png",
+      design: "image/products/Product-11-Design.png",
     },
   },
   {
@@ -182,13 +182,13 @@ export const productData: ProductData[] = [
     description: "Intuition T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-12-Preview.png",
+      preview: "image/products/Product-12-Preview.png",
       model: [
-        "../assets/image/products/Product-12-Model-01.png",
-        "../assets/image/products/Product-12-Model-02.png",
-        "../assets/image/products/Product-12-Model-03.png",
+        "image/products/Product-12-Model-01.png",
+        "image/products/Product-12-Model-02.png",
+        "image/products/Product-12-Model-03.png",
       ],
-      design: "../assets/image/products/Product-12-Design.png",
+      design: "image/products/Product-12-Design.png",
     },
   },
   {
@@ -197,13 +197,13 @@ export const productData: ProductData[] = [
     description: "Intuition The choice is yours T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-13-Preview.png",
+      preview: "image/products/Product-13-Preview.png",
       model: [
-        "../assets/image/products/Product-13-Model-01.png",
-        "../assets/image/products/Product-13-Model-02.png",
-        "../assets/image/products/Product-13-Model-03.png",
+        "image/products/Product-13-Model-01.png",
+        "image/products/Product-13-Model-02.png",
+        "image/products/Product-13-Model-03.png",
       ],
-      design: "../assets/image/products/Product-13-Design.png",
+      design: "image/products/Product-13-Design.png",
     },
   },
   {
@@ -212,13 +212,13 @@ export const productData: ProductData[] = [
     description: "Beauty World T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-14-Preview.png",
+      preview: "image/products/Product-14-Preview.png",
       model: [
-        "../assets/image/products/Product-14-Model-01.png",
-        "../assets/image/products/Product-14-Model-02.png",
-        "../assets/image/products/Product-14-Model-03.png",
+        "image/products/Product-14-Model-01.png",
+        "image/products/Product-14-Model-02.png",
+        "image/products/Product-14-Model-03.png",
       ],
-      design: "../assets/image/products/Product-14-Design.png",
+      design: "image/products/Product-14-Design.png",
     },
   },
   {
@@ -227,13 +227,13 @@ export const productData: ProductData[] = [
     description: "Isolated T-shirt",
     price: 19.9,
     images: {
-      preview: "../assets/image/products/Product-15-Preview.png",
+      preview: "image/products/Product-15-Preview.png",
       model: [
-        "../assets/image/products/Product-15-Model-01.png",
-        "../assets/image/products/Product-15-Model-02.png",
-        "../assets/image/products/Product-15-Model-03.png",
+        "image/products/Product-15-Model-01.png",
+        "image/products/Product-15-Model-02.png",
+        "image/products/Product-15-Model-03.png",
       ],
-      design: "../assets/image/products/Product-15-Design.png",
+      design: "image/products/Product-15-Design.png",
     },
   },
 ];
