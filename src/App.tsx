@@ -1,24 +1,27 @@
-import { productData } from "./data/productData";
+// Import React Router Dom
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Import components
+import Navbar from "./components/Navbar";
+
+// Import pages
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
-  console.log(productData);
   return (
     <>
-      {productData.map((product) => {
-        return (
-          <div key={product.id}>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <img src={product.images.preview} />
-            <img src={product.images.model[0]} />
-            <img src={product.images.model[1]} />
-            <img src={product.images.model[2]} />
-            <img src={product.images.design} />
-            <hr />
-          </div>
-        );
-      })}
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
