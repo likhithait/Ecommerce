@@ -5,7 +5,7 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} container`}>
       <div className={styles.logo}>
         <Link to="/">Logo</Link>
       </div>
@@ -18,6 +18,7 @@ const Navbar = () => {
         <li>
           <Link to="/cart">
             <FaShoppingCart title="Cart" />
+            <span>0</span>
           </Link>
         </li>
       </ul>

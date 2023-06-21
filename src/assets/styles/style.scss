@@ -2,7 +2,7 @@
 
 ::selection {
   color: $bg-color;
-  background-color: $text-color;
+  background-color: $primary-color;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
   background-color: $bg-color;
 }
 
-a {
+* {
   color: $text-color;
 }
 
@@ -20,7 +20,16 @@ a {
   @media screen and (max-width: 780px) {
     padding: 0 2rem;
   }
+
   @media screen and (max-width: 425px) {
     padding: 0 1rem;
+  }
+}
+
+.content {
+  margin-top: 5.5rem;
+
+  @media screen and (max-width: 425px) {
+    margin-top: 4rem;
   }
 }
