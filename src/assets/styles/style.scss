@@ -1,0 +1,26 @@
+@import "variables";
+
+::selection {
+  color: $bg-color;
+  background-color: $text-color;
+}
+
+body {
+  font-family: "Prompt", sans-serif;
+  background-color: $bg-color;
+}
+
+a {
+  color: $text-color;
+}
+
+.container {
+  padding: 0 4rem;
+
+  @media screen and (max-width: 780px) {
+    padding: 0 2rem;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 0 1rem;
+  }
+}
