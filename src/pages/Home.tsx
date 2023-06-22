@@ -1,11 +1,13 @@
-import React from "react";
+// Import components
 import Header from "../components/Header";
+import Shop from "../components/Shop";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <Shop />
+    </>
   );
 };
 

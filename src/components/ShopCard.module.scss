@@ -1,0 +1,42 @@
+@import "../assets/styles/variables";
+
+.card {
+  width: 325px;
+  height: 425px;
+  padding: 20px;
+  background-color: $button-bg-color;
+  backdrop-filter: blur(15px);
+  border: 1px solid $button-border-color;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  .img_box {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    user-select: none;
+
+    img {
+      width: 100%;
+      scale: 105%;
+      transition: 0.3s;
+    }
+  }
+
+  h1 {
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    background-color: $button-hover-color;
+
+    img {
+      scale: 107%;
+    }
+  }
+}
