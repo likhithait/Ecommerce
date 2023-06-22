@@ -11,7 +11,10 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} container`}>
       <div className={styles.logo}>
-        <Link to="/">Logo</Link>
+        <Link to="/">
+          <img src="/favicon.svg" />
+          <h1>S4U</h1>
+        </Link>
       </div>
       <ul className={styles.link_group}>
         <li>
