@@ -1,7 +1,7 @@
 @import "../assets/styles/variables";
 
 .navbar {
-  width: 100%;
+  width: 100vw;
   height: 5.5rem;
   display: flex;
   align-items: center;
@@ -11,7 +11,8 @@
   top: 0;
   margin: 0;
   background-color: #0a0d0e20;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
+  z-index: 10;
 
   .logo {
     font-size: 3rem;
@@ -32,7 +33,7 @@
         font-size: 1.75rem;
         text-align: center;
         background-color: $button-bg-color;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(15px);
         border: 1px solid $button-border-color;
         border-radius: 1rem;
         position: relative;

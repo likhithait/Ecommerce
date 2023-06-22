@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="container content">
+      <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

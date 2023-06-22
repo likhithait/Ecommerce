@@ -1,13 +1,14 @@
 @import "variables";
 
 ::selection {
-  color: $bg-color;
+  color: $text-color;
   background-color: $primary-color;
 }
 
 body {
   font-family: "Prompt", sans-serif;
   background-color: $bg-color;
+  overflow-x: hidden;
 }
 
 * {
@@ -15,6 +16,7 @@ body {
 }
 
 .container {
+  width: 100vw;
   padding: 0 4rem;
 
   @media screen and (max-width: 780px) {
@@ -28,8 +30,4 @@ body {
 
 .content {
   margin-top: 5.5rem;
-
-  @media screen and (max-width: 425px) {
-    margin-top: 4rem;
-  }
 }
