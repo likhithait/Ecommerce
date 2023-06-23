@@ -1,5 +1,6 @@
-// Import useParams
+// Import hook
 import { useParams } from "react-router-dom";
+import useCart from "../hooks/useCart";
 
 // Import components
 import Background from "../components/Background/Background";
@@ -11,6 +12,7 @@ import styles from "./Product.module.scss";
 import { productData } from "../data/productData";
 
 const Product = () => {
+  const [increaseCart] = useCart();
   const { productID } = useParams();
   const product = productData.filter(
     (product) => product.id === Number(productID)
@@ -30,7 +32,9 @@ const Product = () => {
             </div>
             <div className="bottom">
               <p className={styles.price}>${product[0].price}</p>
-              <button>Add to cart</button>
+              <button onClick={() => increaseCart(productID)}>
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
