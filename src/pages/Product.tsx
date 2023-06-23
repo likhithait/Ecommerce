@@ -12,7 +12,7 @@ import styles from "./Product.module.scss";
 import { productData } from "../data/productData";
 
 const Product = () => {
-  const [increaseCart] = useCart();
+  const [, increaseCart] = useCart();
   const { productID } = useParams();
   const product = productData.filter(
     (product) => product.id === Number(productID)

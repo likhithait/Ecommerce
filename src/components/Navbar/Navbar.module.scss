@@ -60,6 +60,10 @@
           line-height: 0.875rem;
           background-color: $primary-color;
           border-radius: 1rem;
+
+          &.zero {
+            display: none;
+          }
         }
 
         &:hover {

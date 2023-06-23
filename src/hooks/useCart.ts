@@ -66,7 +66,15 @@ const useCart = () => {
     setCard(newCart);
   };
 
-  return [cart, increaseCart, decreaseCart, removeCart];
+  const total = () => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.amount;
+    });
+    return sum;
+  };
+
+  return [cart, increaseCart, decreaseCart, removeCart, total];
 };
 
 export default useCart;
