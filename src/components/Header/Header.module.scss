@@ -1,5 +1,5 @@
-@import "../assets/styles/variables";
-@import "../assets/styles/reuseable";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/reuseable";
 
 header {
   height: 95vh;
@@ -22,6 +22,13 @@ header {
       font-family: cursive;
       rotate: -10deg;
       text-shadow: 0px 0px 10px $primary-color;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    h1 span {
+      bottom: 40px;
+      right: 100px;
     }
   }
 

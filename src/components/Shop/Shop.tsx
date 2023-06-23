@@ -5,7 +5,7 @@ import ShopCard from "./ShopCard";
 import styles from "./Shop.module.scss";
 
 // import data
-import { productData, ProductData } from "../data/productData";
+import { productData } from "../../data/productData";
 
 const Shop = () => {
   const shopItem = productData.map((product) => {

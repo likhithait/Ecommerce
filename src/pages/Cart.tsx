@@ -1,5 +1,5 @@
 // Import components
-import Background from "../components/Background";
+import Background from "../components/Background/Background";
 
 const Cart = () => {
   return (

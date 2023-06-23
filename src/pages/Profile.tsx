@@ -1,10 +1,11 @@
 // Import components
-import Background from "../components/Background";
+import Background from "../components/Background/Background";
+import Login from "../components/Profile/Login";
 
 const Profile = () => {
   return (
     <div>
-      Profile
+      <Login />
       <Background />
     </div>
   );

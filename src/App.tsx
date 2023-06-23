@@ -2,14 +2,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Import components
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 // Import pages
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 
 // Import styles
 import "./assets/styles/_reset.scss";
@@ -25,8 +23,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </BrowserRouter>
