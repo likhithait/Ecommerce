@@ -18,11 +18,6 @@ const Navbar = () => {
       </div>
       <ul className={styles.link_group}>
         <li>
-          <Link to="/profile" title="Profile">
-            <FaUserCircle />
-          </Link>
-        </li>
-        <li>
           <Link to="/cart">
             <FaShoppingCart title="Cart" />
             <span>0</span>

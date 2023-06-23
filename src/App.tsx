@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar/Navbar";
 // Import pages
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import Profile from "./pages/Profile";
 
 // Import styles
 import "./assets/styles/_reset.scss";
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </BrowserRouter>
