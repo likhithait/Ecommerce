@@ -1,7 +1,13 @@
-import React from "react";
+// Import components
+import Background from "../components/Background";
 
 const Profile = () => {
-  return <div>Profile</div>;
+  return (
+    <div>
+      Profile
+      <Background />
+    </div>
+  );
 };
 
 export default Profile;

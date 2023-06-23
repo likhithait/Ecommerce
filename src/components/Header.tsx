@@ -1,3 +1,6 @@
+// Import components
+import Background from "./Background";
+
 // Import styles
 import styles from "./Header.module.scss";
 
@@ -9,14 +12,7 @@ const Header = () => {
           NEW STYLE <span>FOR YOU</span>
         </h1>
       </div>
-      <div className={styles.bg}>
-        <div className={styles.shape_group}>
-          <div className={styles.shape1}></div>
-          <div className={styles.shape2}></div>
-          <div className={styles.shape3}></div>
-          <div className={styles.shape4}></div>
-        </div>
-      </div>
+      <Background />
     </header>
   );
 };

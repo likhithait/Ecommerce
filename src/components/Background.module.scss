@@ -1,0 +1,79 @@
+@import "../assets/styles/variables";
+@import "../assets/styles/reuseable";
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(100px);
+  z-index: -1;
+  overflow: hidden;
+
+  .shape_group {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .shape1 {
+      position: absolute;
+      @include shape(
+        1400px,
+        linear-gradient(
+          30deg,
+          rgba(178, 91, 255, 1) 0%,
+          rgba(255, 0, 146, 1) 100%
+        ),
+        15%
+      );
+      top: -250px;
+      left: -200px;
+    }
+
+    .shape2 {
+      position: absolute;
+      @include shape(
+        1200px,
+        linear-gradient(
+          150deg,
+          rgba(101, 38, 255, 1) 0%,
+          rgba(184, 110, 255, 1) 100%
+        ),
+        20%
+      );
+      bottom: -600px;
+      right: -250px;
+    }
+
+    .shape3 {
+      position: absolute;
+      @include shape(
+        600px,
+        linear-gradient(
+          30deg,
+          rgba(255, 212, 0, 1) 0%,
+          rgba(0, 191, 0, 1) 100%
+        ),
+        10%
+      );
+      top: -200px;
+      right: 250px;
+    }
+
+    .shape4 {
+      position: absolute;
+      @include shape(
+        300px,
+        linear-gradient(
+          30deg,
+          rgba(255, 212, 0, 1) 0%,
+          rgba(0, 191, 0, 1) 100%
+        ),
+        10%
+      );
+      top: 350px;
+      left: 300px;
+    }
+  }
+}

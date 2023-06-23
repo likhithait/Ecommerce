@@ -1,7 +1,13 @@
-import React from "react";
+// Import components
+import Background from "../components/Background";
 
 const Cart = () => {
-  return <div>Cart</div>;
+  return (
+    <div>
+      Cart
+      <Background />
+    </div>
+  );
 };
 
 export default Cart;

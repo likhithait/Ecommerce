@@ -1,7 +1,13 @@
-import React from "react";
+// Import components
+import Background from "../components/Background";
 
 const Signup = () => {
-  return <div>Signup</div>;
+  return (
+    <div>
+      Signup
+      <Background />
+    </div>
+  );
 };
 
 export default Signup;
