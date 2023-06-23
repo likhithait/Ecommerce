@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Import icons
-import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 // Import styles
 import styles from "./Navbar.module.scss";

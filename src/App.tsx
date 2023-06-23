@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 // Import pages
 import Home from "./pages/Home";
+import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 
 // Import styles
@@ -20,6 +21,7 @@ function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/product/:productID" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>

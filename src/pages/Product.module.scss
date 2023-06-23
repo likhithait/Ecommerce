@@ -1,0 +1,55 @@
+@import "../assets/styles/variables";
+
+.product {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  .img {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 70%;
+      border-radius: 1rem;
+    }
+  }
+
+  .detail {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-size: 5rem;
+      line-height: 4.5rem;
+    }
+
+    .description {
+      font-size: 2rem;
+    }
+
+    .price {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 1rem;
+      font-size: 1.75rem;
+      background-color: $button-bg-color;
+      backdrop-filter: blur(15px);
+      border: 1px solid $button-border-color;
+      border-radius: 1rem;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+    }
+  }
+}
