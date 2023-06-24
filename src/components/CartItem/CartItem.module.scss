@@ -11,6 +11,7 @@
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   .product {
     display: flex;
@@ -41,21 +42,19 @@
       .amount {
         display: flex;
 
-        input {
-          width: 50px;
-          height: 50px;
+        p {
+          min-width: 64px;
           padding: 1rem;
           line-height: 1rem;
           font-size: 1.75rem;
           background-color: $button-bg-color;
           backdrop-filter: blur(15px);
           border: 1px solid $button-border-color;
+          text-align: center;
         }
 
         button {
           @include button();
-          width: 50px;
-          height: 50px;
 
           &.decrease {
             border-radius: 1rem 0 0 1rem;
@@ -80,7 +79,6 @@
 
   @media screen and (max-width: 425px) {
     flex-direction: column;
-    position: relative;
 
     .product {
       flex-direction: column;

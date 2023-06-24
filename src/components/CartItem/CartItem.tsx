@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 // import data
 import { productData } from "../../data/productData";
+// Import icons
+import { FaMinus, FaPlus } from "react-icons/fa";
 // Import styles
 import styles from "./CartItem.module.scss";
 
@@ -26,14 +28,14 @@ const CartItem: React.FC = ({ item }) => {
               className={styles.decrease}
               onClick={() => decreaseCart(item.id)}
             >
-              -
+              <FaMinus />
             </button>
-            <input type="number" value={item.amount} />
+            <p>{item.amount}</p>
             <button
               className={styles.increase}
               onClick={() => increaseCart(item.id)}
             >
-              +
+              <FaPlus />
             </button>
           </div>
         </div>
@@ -41,6 +43,7 @@ const CartItem: React.FC = ({ item }) => {
       <div className={styles.price}>
         <h1>${(item.amount * price).toFixed(2)}</h1>
       </div>
+      {/* <p>x</p> */}
     </div>
   );
 };
