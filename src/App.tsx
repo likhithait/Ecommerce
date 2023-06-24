@@ -1,14 +1,11 @@
 // Import React Router Dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 // Import components
 import Navbar from "./components/Navbar/Navbar";
-
 // Import pages
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-
 // Import styles
 import "./assets/styles/_reset.scss";
 import "./assets/styles/_variables.scss";

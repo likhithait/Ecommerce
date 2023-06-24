@@ -1,9 +1,7 @@
 // import data
 import { productData } from "../../data/productData";
-
 // Import components
 import ShopCard from "./ShopCard";
-
 // Import styles
 import styles from "./Shop.module.scss";
 

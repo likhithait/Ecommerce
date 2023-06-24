@@ -1,20 +1,15 @@
 // Import hook
 import { useContext } from "react";
-
 // Import context
 import { CartContext } from "../../context/CartContext";
-
 // Import link
 import { Link } from "react-router-dom";
-
 // Import icons
 import { FaShoppingCart } from "react-icons/fa";
-
 // Import styles
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  // const [, , , , totalCart] = useCart();
   const { totalCart } = useContext(CartContext);
 
   return (

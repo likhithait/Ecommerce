@@ -1,7 +1,7 @@
 // Import styles
 import styles from "./CartItem.module.scss";
 
-const CartItem = ({ item }) => {
+const CartItem: React.FC = ({ item }) => {
   return (
     <div>
       {item.id}: {item.amount}

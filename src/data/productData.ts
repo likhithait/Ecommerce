@@ -1,4 +1,4 @@
-interface ProductData {
+export interface ProductDataProps {
   id: number;
   title: string;
   description: string;
@@ -10,7 +10,7 @@ interface ProductData {
   };
 }
 
-export const productData: ProductData[] = [
+export const productData: ProductDataProps[] = [
   {
     id: 1,
     title: "T-Shirt 1",

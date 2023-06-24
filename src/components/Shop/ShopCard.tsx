@@ -1,8 +1,11 @@
-// Import styles
+import React from "react";
 import { Link } from "react-router-dom";
+// Import styles
 import styles from "./ShopCard.module.scss";
+// Import props
+import { ProductDataProps } from "../../data/productData";
 
-const ShopCard = ({ product }) => {
+const ShopCard: React.FC<ProductDataProps> = ({ product }) => {
   return (
     <Link to={`/product/${product.id}`}>
       <div className={styles.card}>

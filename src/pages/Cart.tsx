@@ -1,9 +1,7 @@
 // Import hook
 import { useContext } from "react";
-
 // Import context
 import { CartContext } from "../context/CartContext";
-
 // Import components
 import Background from "../components/Background/Background";
 import CartItem from "../components/Cart/CartItem";

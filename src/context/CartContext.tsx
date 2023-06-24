@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
 
-interface CartItem {
+interface CartItemProps {
   id: number;
   amount: number;
 }
 
 interface CartContextProps {
-  cart: CartItem[];
+  cart: CartItemProps[];
   increaseCart: (id: number) => void;
   decreaseCart: (id: number) => void;
   removeCart: (id: number) => void;
@@ -17,7 +17,7 @@ export const CartContext = createContext<CartContextProps | null>(null);
 
 export const CartContextProvider: React.FC = ({ children }) => {
   const [totalCart, setTotalCart] = useState(0);
-  const [cart, setCart] = useState<CartItem[]>(() => {
+  const [cart, setCart] = useState<CartItemProps[]>(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
       return JSON.parse(savedCart);
@@ -32,9 +32,9 @@ export const CartContextProvider: React.FC = ({ children }) => {
   }, [cart]);
 
   const increaseCart = (id: number) => {
-    const selectProduct = cart.find((item: CartItem) => item.id === id);
+    const selectProduct = cart.find((item: CartItemProps) => item.id === id);
     if (selectProduct === undefined) {
-      setCart((prevCart: CartItem[]) => {
+      setCart((prevCart: CartItemProps[]) => {
         return [
           {
             id: id,
@@ -44,7 +44,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
         ];
       });
     } else {
-      const newCart = cart.map((item: CartItem) => {
+      const newCart = cart.map((item: CartItemProps) => {
         if (item.id === id) {
           return {
             id: id,
@@ -59,9 +59,9 @@ export const CartContextProvider: React.FC = ({ children }) => {
   };
 
   const decreaseCart = (id: number) => {
-    const selectProduct = cart.find((item: CartItem) => item.id === id);
+    const selectProduct = cart.find((item: CartItemProps) => item.id === id);
     if (selectProduct && selectProduct.amount > 1) {
-      const newCart = cart.map((item: CartItem) => {
+      const newCart = cart.map((item: CartItemProps) => {
         if (item.id === id) {
           return {
             id: id,
@@ -78,7 +78,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
   };
 
   const removeCart = (id: number) => {
-    const newCart = cart.filter((item: CartItem) => item.id !== id);
+    const newCart = cart.filter((item: CartItemProps) => item.id !== id);
     setCart(newCart);
   };
 

@@ -1,7 +1,7 @@
 // Import styles
 import styles from "./Background.module.scss";
 
-const Background = () => {
+const Background: React.FC = () => {
   return (
     <div className={styles.bg}>
       <div className={styles.shape_group}>
