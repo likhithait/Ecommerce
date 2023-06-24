@@ -1,11 +1,11 @@
+// import data
+import { productData } from "../../data/productData";
+
 // Import components
 import ShopCard from "./ShopCard";
 
 // Import styles
 import styles from "./Shop.module.scss";
-
-// import data
-import { productData } from "../../data/productData";
 
 const Shop = () => {
   const shopItem = productData.map((product) => {

@@ -1,5 +1,8 @@
 // Import hook
-import useCart from "../../hooks/useCart";
+import { useContext } from "react";
+
+// Import context
+import { CartContext } from "../../context/CartContext";
 
 // Import link
 import { Link } from "react-router-dom";
@@ -11,7 +14,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const [, , , , total] = useCart();
+  // const [, , , , totalCart] = useCart();
+  const { totalCart } = useContext(CartContext);
 
   return (
     <nav className={`${styles.navbar} container`}>
@@ -25,8 +29,8 @@ const Navbar = () => {
         <li>
           <Link to="/cart">
             <FaShoppingCart title="Cart" />
-            <span className={total() === 0 ? `${styles.zero}` : ""}>
-              {total()}
+            <span className={totalCart === 0 ? `${styles.zero}` : ""}>
+              {totalCart}
             </span>
           </Link>
         </li>

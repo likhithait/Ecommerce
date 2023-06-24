@@ -1,8 +1,23 @@
-// Import hook
-import { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-const useCart = () => {
-  const [cart, setCard] = useState(() => {
+interface CartItem {
+  id: number;
+  amount: number;
+}
+
+interface CartContextProps {
+  cart: CartItem[];
+  increaseCart: (id: number) => void;
+  decreaseCart: (id: number) => void;
+  removeCart: (id: number) => void;
+  totalCart: number;
+}
+
+export const CartContext = createContext<CartContextProps | null>(null);
+
+export const CartContextProvider: React.FC = ({ children }) => {
+  const [totalCart, setTotalCart] = useState(0);
+  const [cart, setCart] = useState<CartItem[]>(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
       return JSON.parse(savedCart);
@@ -13,18 +28,19 @@ const useCart = () => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+    total();
   }, [cart]);
 
   const increaseCart = (id: number) => {
     const selectProduct = cart.find((item: CartItem) => item.id === id);
     if (selectProduct === undefined) {
-      setCard((prevCard: CartItem[]) => {
+      setCart((prevCart: CartItem[]) => {
         return [
           {
             id: id,
             amount: 1,
           },
-          ...prevCard,
+          ...prevCart,
         ];
       });
     } else {
@@ -38,13 +54,13 @@ const useCart = () => {
           return item;
         }
       });
-      setCard(newCart);
+      setCart(newCart);
     }
   };
 
   const decreaseCart = (id: number) => {
     const selectProduct = cart.find((item: CartItem) => item.id === id);
-    if (selectProduct.amount > 1) {
+    if (selectProduct && selectProduct.amount > 1) {
       const newCart = cart.map((item: CartItem) => {
         if (item.id === id) {
           return {
@@ -55,7 +71,7 @@ const useCart = () => {
           return item;
         }
       });
-      setCard(newCart);
+      setCart(newCart);
     } else {
       removeCart(id);
     }
@@ -63,7 +79,7 @@ const useCart = () => {
 
   const removeCart = (id: number) => {
     const newCart = cart.filter((item: CartItem) => item.id !== id);
-    setCard(newCart);
+    setCart(newCart);
   };
 
   const total = () => {
@@ -71,15 +87,18 @@ const useCart = () => {
     cart.forEach((item) => {
       sum += item.amount;
     });
-    return sum;
+    setTotalCart(sum);
   };
 
-  return [cart, increaseCart, decreaseCart, removeCart, total];
+  const contextValue: CartContextProps = {
+    cart,
+    increaseCart,
+    decreaseCart,
+    removeCart,
+    totalCart,
+  };
+
+  return (
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+  );
 };
-
-export default useCart;
-
-interface CartItem {
-  id: number;
-  amount: number;
-}

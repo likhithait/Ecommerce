@@ -1,6 +1,12 @@
 // Import hook
 import { useParams } from "react-router-dom";
-import useCart from "../hooks/useCart";
+import { useContext } from "react";
+
+// Import context
+import { CartContext } from "../context/CartContext";
+
+// import data
+import { productData } from "../data/productData";
 
 // Import components
 import Background from "../components/Background/Background";
@@ -8,11 +14,8 @@ import Background from "../components/Background/Background";
 // Import styles
 import styles from "./Product.module.scss";
 
-// import data
-import { productData } from "../data/productData";
-
 const Product = () => {
-  const [, increaseCart] = useCart();
+  const { increaseCart } = useContext(CartContext);
   const { productID } = useParams();
   const product = productData.filter(
     (product) => product.id === Number(productID)
@@ -23,7 +26,10 @@ const Product = () => {
       <div className="container">
         <div className={styles.product}>
           <div className={styles.img}>
-            <img src={`../${product[0].images.preview}`} />
+            <img
+              src={`../${product[0].images.preview}`}
+              alt={product[0].title}
+            />
           </div>
           <div className={styles.detail}>
             <div className="top">
