@@ -16,6 +16,7 @@ const Product = () => {
   const product = productData.filter(
     (product) => product.id === Number(productID)
   );
+
   const { title, description, price, images } = product[0];
 
   return (
