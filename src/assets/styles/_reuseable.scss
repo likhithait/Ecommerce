@@ -1,7 +1,24 @@
+@import "variables";
+
 @mixin shape($size, $color, $opacity) {
   width: $size;
   height: $size;
   background: $color;
   border-radius: 50%;
   opacity: $opacity;
+}
+
+@mixin button {
+  padding: 1rem;
+  line-height: 1rem;
+  font-size: 1.75rem;
+  background-color: $button-bg-color;
+  backdrop-filter: blur(15px);
+  border: 1px solid $button-border-color;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
 }
