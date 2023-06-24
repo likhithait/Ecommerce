@@ -1,0 +1,108 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/reuseable";
+
+.card {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: $button-bg-color;
+  backdrop-filter: blur(15px);
+  border: 1px solid $button-border-color;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  .product {
+    display: flex;
+    gap: 20px;
+
+    .img {
+      width: 250px;
+      border-radius: 1rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        scale: 105%;
+        object-fit: cover;
+      }
+    }
+
+    .detail {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .amount {
+        display: flex;
+
+        input {
+          width: 50px;
+          height: 50px;
+          padding: 1rem;
+          line-height: 1rem;
+          font-size: 1.75rem;
+          background-color: $button-bg-color;
+          backdrop-filter: blur(15px);
+          border: 1px solid $button-border-color;
+        }
+
+        button {
+          @include button();
+          width: 50px;
+          height: 50px;
+
+          &.decrease {
+            border-radius: 1rem 0 0 1rem;
+          }
+          &.increase {
+            border-radius: 0 1rem 1rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  .price {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    h1 {
+      margin: 10px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+    position: relative;
+
+    .product {
+      flex-direction: column;
+      gap: 0;
+
+      .img {
+        width: 100%;
+      }
+
+      .detail .amount {
+        margin-top: 40px;
+      }
+    }
+
+    .price {
+      position: absolute;
+      right: 20px;
+      bottom: 25px;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

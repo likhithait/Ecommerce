@@ -17,6 +17,7 @@
   border: 1px solid $button-border-color;
   border-radius: 1rem;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     background-color: $button-hover-color;
