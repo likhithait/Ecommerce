@@ -4,7 +4,7 @@ This E-Commerce Website has been developed using ReactJS.
 
 ## Preview
 
-![Preview](https://github.com/parunchxi/React-Simple-Ecommerce-Website/assets/127289841/a55a5f4c-ce0c-4e50-9b83-e8167c4bd38c)
+![Preview](https://github.com/parunchxi/React-Simple-Ecommerce-Website/assets/127289841/949b7a55-e3e6-4339-b97c-907fbfa7dc55)
 
 ## Installation
 
