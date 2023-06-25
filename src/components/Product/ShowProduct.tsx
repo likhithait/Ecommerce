@@ -10,11 +10,15 @@ import Background from "../Background/Background";
 import styles from "./ShowProduct.module.scss";
 
 const Product = ({ productID }) => {
-  const { increaseCart } = useContext(CartContext);
+  const { increaseCart, cart } = useContext(CartContext);
 
   const product = productData.filter(
     (product) => product.id === Number(productID)
   );
+
+  const productInCart = cart.filter((item) => item.id === Number(productID));
+  const amount = productInCart.length > 0 ? productInCart[0].amount : false;
+
   const { title, description, price, images } = product[0];
 
   const imgs = [
@@ -64,7 +68,7 @@ const Product = ({ productID }) => {
               <p className={styles.description}>{description}</p>
             </div>
             <div className="bottom">
-              <p className={styles.price}>${price}</p>
+              <p className={styles.price}>${price.toFixed(2)}</p>
               <div className={styles.button_group}>
                 <button
                   className={styles.buy_now}
@@ -76,7 +80,7 @@ const Product = ({ productID }) => {
                   className={styles.add_to_cart}
                   onClick={() => increaseCart(Number(productID))}
                 >
-                  Add to cart
+                  Add to cart {amount ? `(${amount})` : ""}
                 </button>
               </div>
             </div>

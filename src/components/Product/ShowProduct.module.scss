@@ -147,4 +147,10 @@
       }
     }
   }
+
+  @media screen and (max-width: 425px) {
+    .detail .button_group button {
+      font-size: 1.5rem;
+    }
+  }
 }
