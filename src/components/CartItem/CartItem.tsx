@@ -10,8 +10,13 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import styles from "./CartItem.module.scss";
 
 const CartItem: React.FC = ({ item }) => {
-  const { increaseCart, decreaseCart, removeCart, totalCart } =
-    useContext(CartContext);
+  const {
+    increaseCart,
+    decreaseCart,
+    removeCart,
+    totalCart,
+    handleAmountChange,
+  } = useContext(CartContext);
   const product = productData.filter((product) => product.id === item.id);
   const { title, description, price, images } = product[0];
 
@@ -31,7 +36,13 @@ const CartItem: React.FC = ({ item }) => {
             >
               <FaMinus />
             </button>
-            <p>{item.amount}</p>
+            <input
+              type="number"
+              value={item.amount}
+              onChange={(event) => {
+                handleAmountChange(item.id, event.target.value);
+              }}
+            />
             <button
               className={styles.increase}
               onClick={() => increaseCart(item.id)}

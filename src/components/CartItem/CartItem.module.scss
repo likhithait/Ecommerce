@@ -5,10 +5,9 @@
   width: 100%;
   padding: 1rem;
   margin: 1rem 0;
-  background-color: $Gray;
-  backdrop-filter: blur(15px);
-  border: 1px solid $LightGray;
+  background-color: $LightGray;
   border-radius: 1rem;
+  box-shadow: 0 0 20px 0 #0a0d0e20;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -42,8 +41,8 @@
       .amount {
         display: flex;
 
-        p {
-          min-width: 64px;
+        input {
+          width: 100px;
           padding: 1rem;
           line-height: 1rem;
           font-size: 1.75rem;

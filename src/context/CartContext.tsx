@@ -48,7 +48,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
         if (item.id === id) {
           return {
             id: id,
-            amount: selectProduct.amount + 1,
+            amount: Number(selectProduct.amount) + 1,
           };
         } else {
           return item;
@@ -65,7 +65,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
         if (item.id === id) {
           return {
             id: id,
-            amount: selectProduct.amount - 1,
+            amount: Number(selectProduct.amount) - 1,
           };
         } else {
           return item;
@@ -85,17 +85,34 @@ export const CartContextProvider: React.FC = ({ children }) => {
   const total = () => {
     let sum = 0;
     cart.forEach((item) => {
-      sum += item.amount;
+      sum += Number(item.amount);
     });
     setTotalCart(sum);
   };
 
+  const handleAmountChange = (id: number, value: number) => {
+    const selectProduct = cart.find((item: CartItemProps) => item.id === id);
+    if (selectProduct) {
+      const newCart = cart.map((item: CartItemProps) => {
+        if (item.id === id) {
+          return {
+            id: id,
+            amount: value,
+          };
+        } else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
+  };
   const contextValue: CartContextProps = {
     cart,
     increaseCart,
     decreaseCart,
     removeCart,
     totalCart,
+    handleAmountChange,
   };
 
   return (
