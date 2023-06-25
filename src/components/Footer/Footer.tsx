@@ -6,8 +6,8 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className="container">
         <h1>
-          New Style |{" "}
-          <a href="https://github.com/parunchxi/React-Ecommerce-Website">
+          New Style | Simple E-Commerce Website |{" "}
+          <a href="https://github.com/parunchxi/React-Simple-Ecommerce-Website">
             Github
           </a>
         </h1>

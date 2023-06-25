@@ -17,7 +17,7 @@ const ShopCard: React.FC<ProductDataProps> = ({ product }) => {
           />
         </div>
         <h1>{product.title}</h1>
-        <p>${product.price}</p>
+        <p>${product.price.toFixed(2)}</p>
       </div>
     </Link>
   );
