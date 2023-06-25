@@ -38,7 +38,6 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <div className={styles.bg}></div>
     </>
   );
 };

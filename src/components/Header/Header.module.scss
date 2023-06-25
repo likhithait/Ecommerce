@@ -14,6 +14,17 @@ header {
     position: relative;
   }
 
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 500px;
+    z-index: -1;
+    overflow-x: hidden;
+    background: linear-gradient(0deg, $White 5%, #0a0d0e25 100%) #0a0d0e75;
+  }
+
   @media screen and (max-width: 1440px) {
     h1 {
       font-size: 10rem;

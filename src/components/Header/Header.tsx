@@ -9,7 +9,7 @@ const Header: React.FC = () => {
       <div className="container">
         <h1>NEW STYLE</h1>
       </div>
-      {/* <Background /> */}
+      <div className={styles.bg}></div>
     </header>
   );
 };
