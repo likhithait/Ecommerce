@@ -1,5 +1,6 @@
 // Import hook
 import { useContext } from "react";
+import { useScrollPosition } from "../../hook/useScrollPosition";
 // Import context
 import { CartContext } from "../../context/CartContext";
 // Import link
@@ -11,9 +12,14 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const { totalCart } = useContext(CartContext);
+  const scrollPosition = useScrollPosition();
 
   return (
-    <nav className={`${styles.navbar} container`}>
+    <nav
+      className={`${styles.navbar} container ${
+        scrollPosition > 50 && `${styles.scroll}`
+      }`}
+    >
       <div className={styles.logo}>
         <Link to="/">
           <img src="/favicon.svg" />
