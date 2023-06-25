@@ -1,5 +1,6 @@
 // Import hook
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 // Import context
 import { CartContext } from "../../context/CartContext";
 // import data
@@ -24,9 +25,11 @@ const CartItem: React.FC = ({ item }) => {
   return (
     <div className={styles.card}>
       <div className={styles.product}>
-        <div className={styles.img}>
-          <img src={`../${images.preview}`} alt={title} />
-        </div>
+        <Link to={`/product/${item.id}`}>
+          <div className={styles.img}>
+            <img src={`../${images.preview}`} alt={title} />
+          </div>
+        </Link>
         <div className={styles.detail}>
           <h1>{title}</h1>
           <div className={styles.button_group}>
