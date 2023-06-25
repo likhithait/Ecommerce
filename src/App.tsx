@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
+import Page404 from "./pages/Page404";
 // Import styles
 import "./assets/styles/_reset.scss";
 import "./assets/styles/_variables.scss";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/:productID" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
     </BrowserRouter>
