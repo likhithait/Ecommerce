@@ -1,5 +1,4 @@
 @import "../../assets/styles/variables";
-@import "../../assets/styles/reuseable";
 
 .card {
   width: 100%;
@@ -38,28 +37,37 @@
         font-size: 3rem;
       }
 
-      .amount {
+      .button_group {
         display: flex;
+        gap: 15px;
 
-        input {
-          width: 100px;
-          padding: 1rem;
-          line-height: 1rem;
-          font-size: 1.75rem;
-          background-color: $Gray;
-          backdrop-filter: blur(15px);
-          border: 1px solid $LightGray;
-          text-align: center;
-        }
+        .amount {
+          display: flex;
 
-        button {
-          @include button();
+          input {
+            width: 100px;
+            padding: 1rem;
+            line-height: 1rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            background-color: $LightGray;
+            border: 1px solid $Gray;
+            text-align: center;
 
-          &.decrease {
-            border-radius: 1rem 0 0 1rem;
+            &:hover {
+              background-color: $Gray;
+            }
           }
-          &.increase {
-            border-radius: 0 1rem 1rem 0;
+
+          button {
+            &.decrease {
+              border-radius: 1rem 0 0 1rem;
+              border-right: transparent;
+            }
+            &.increase {
+              border-radius: 0 1rem 1rem 0;
+              border-left: transparent;
+            }
           }
         }
       }
@@ -70,13 +78,31 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    gap: 20px;
+    margin: 20px 0;
 
     h1 {
-      margin: 10px;
+      font-weight: 500;
     }
   }
 
-  @media screen and (max-width: 425px) {
+  button {
+    padding: 1rem;
+    line-height: 1rem;
+    font-size: 1.75rem;
+    background-color: $LightGray;
+    border: 1px solid $Gray;
+    border-radius: 1rem;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+
+    &:hover {
+      background-color: $Gray;
+    }
+  }
+
+  @media screen and (max-width: 780px) {
     flex-direction: column;
 
     .product {
@@ -87,19 +113,25 @@
         width: 100%;
       }
 
-      .detail .amount {
-        margin-top: 40px;
+      .detail {
+        margin: 10px 10px 0;
       }
     }
 
     .price {
-      position: absolute;
-      right: 20px;
-      bottom: 25px;
+      margin: 20px 10px;
+      justify-content: flex-start;
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .price {
+      margin: 10px;
+      justify-content: flex-start;
     }
   }
 }

@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 // import data
 import { productData } from "../../data/productData";
 // Import icons
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 // Import styles
 import styles from "./CartItem.module.scss";
 
@@ -17,6 +17,7 @@ const CartItem: React.FC = ({ item }) => {
     totalCart,
     handleAmountChange,
   } = useContext(CartContext);
+
   const product = productData.filter((product) => product.id === item.id);
   const { title, description, price, images } = product[0];
 
@@ -28,34 +29,37 @@ const CartItem: React.FC = ({ item }) => {
         </div>
         <div className={styles.detail}>
           <h1>{title}</h1>
-          <p>Price: ${price.toFixed(2)}</p>
-          <div className={styles.amount}>
-            <button
-              className={styles.decrease}
-              onClick={() => decreaseCart(item.id)}
-            >
-              <FaMinus />
+          <div className={styles.button_group}>
+            <button onClick={() => removeCart(item.id)}>
+              <FaTrash />
             </button>
-            <input
-              type="number"
-              value={item.amount}
-              onChange={(event) => {
-                handleAmountChange(item.id, event.target.value);
-              }}
-            />
-            <button
-              className={styles.increase}
-              onClick={() => increaseCart(item.id)}
-            >
-              <FaPlus />
-            </button>
+            <div className={styles.amount}>
+              <button
+                className={styles.decrease}
+                onClick={() => decreaseCart(item.id)}
+              >
+                <FaMinus />
+              </button>
+              <input
+                type="number"
+                value={item.amount}
+                onChange={(event) => {
+                  handleAmountChange(item.id, event.target.value);
+                }}
+              />
+              <button
+                className={styles.increase}
+                onClick={() => increaseCart(item.id)}
+              >
+                <FaPlus />
+              </button>
+            </div>
           </div>
         </div>
       </div>
       <div className={styles.price}>
-        <h1>Total: ${(item.amount * price).toFixed(2)}</h1>
+        <h1>${(item.amount * price).toFixed(2)}</h1>
       </div>
-      {/* <p>x</p> */}
     </div>
   );
 };

@@ -106,6 +106,11 @@ export const CartContextProvider: React.FC = ({ children }) => {
       setCart(newCart);
     }
   };
+
+  const clearCart = (id: number) => {
+    setCart([]);
+  };
+
   const contextValue: CartContextProps = {
     cart,
     increaseCart,
@@ -113,6 +118,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
     removeCart,
     totalCart,
     handleAmountChange,
+    clearCart,
   };
 
   return (
