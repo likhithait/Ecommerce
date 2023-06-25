@@ -4,10 +4,9 @@
   width: 325px;
   height: 425px;
   padding: 20px;
-  background-color: $Gray;
-  backdrop-filter: blur(15px);
-  border: 1px solid $LightGray;
+  background-color: $LightGray;
   border-radius: 1rem;
+  box-shadow: 0 0 20px 0 #0a0d0e20;
   cursor: pointer;
   transition: 0.3s;
 
@@ -33,7 +32,7 @@
   }
 
   &:hover {
-    background-color: $LightGray;
+    background-color: $Gray;
 
     img {
       scale: 110%;
