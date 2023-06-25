@@ -15,7 +15,7 @@ export const productData: ProductDataProps[] = [
     id: 1,
     title: "T-Shirt 1",
     description: "Vintage Retro? T-shirt",
-    price: 19.9,
+    price: 24.99,
     images: {
       preview: "image/products/Product-01-Preview.png",
       model: [
@@ -30,7 +30,7 @@ export const productData: ProductDataProps[] = [
     id: 2,
     title: "T-Shirt 2",
     description: "Just Vibin' T-shirt",
-    price: 19.9,
+    price: 24.99,
     images: {
       preview: "image/products/Product-02-Preview.png",
       model: [
@@ -45,7 +45,7 @@ export const productData: ProductDataProps[] = [
     id: 3,
     title: "T-Shirt 3",
     description: "Soft Bold T-shirt",
-    price: 19.9,
+    price: 9.99,
     images: {
       preview: "image/products/Product-03-Preview.png",
       model: [
@@ -60,7 +60,7 @@ export const productData: ProductDataProps[] = [
     id: 4,
     title: "T-Shirt 4",
     description: "Psyco T-shirt",
-    price: 19.9,
+    price: 9.99,
     images: {
       preview: "image/products/Product-04-Preview.png",
       model: [
@@ -75,7 +75,7 @@ export const productData: ProductDataProps[] = [
     id: 5,
     title: "T-Shirt 5",
     description: "Secrets T-shirt",
-    price: 19.9,
+    price: 9.99,
     images: {
       preview: "image/products/Product-05-Preview.png",
       model: [
@@ -105,7 +105,7 @@ export const productData: ProductDataProps[] = [
     id: 7,
     title: "T-Shirt 7",
     description: "Destiny T-shirt",
-    price: 19.9,
+    price: 19.99,
     images: {
       preview: "image/products/Product-07-Preview.png",
       model: [
@@ -120,7 +120,7 @@ export const productData: ProductDataProps[] = [
     id: 8,
     title: "T-Shirt 8",
     description: "Destiny is waiting T-shirt",
-    price: 19.9,
+    price: 19.99,
     images: {
       preview: "image/products/Product-08-Preview.png",
       model: [
@@ -135,7 +135,7 @@ export const productData: ProductDataProps[] = [
     id: 9,
     title: "T-Shirt 9",
     description: "Instinct  The choice is yours T-shirt",
-    price: 19.9,
+    price: 29.9,
     images: {
       preview: "image/products/Product-09-Preview.png",
       model: [
@@ -150,7 +150,7 @@ export const productData: ProductDataProps[] = [
     id: 10,
     title: "T-Shirt 10",
     description: "Warrior The choice is yours T-shirt",
-    price: 19.9,
+    price: 29.9,
     images: {
       preview: "image/products/Product-10-Preview.png",
       model: [
@@ -195,7 +195,7 @@ export const productData: ProductDataProps[] = [
     id: 13,
     title: "T-Shirt 13",
     description: "Intuition The choice is yours T-shirt",
-    price: 19.9,
+    price: 24.99,
     images: {
       preview: "image/products/Product-13-Preview.png",
       model: [
@@ -210,7 +210,7 @@ export const productData: ProductDataProps[] = [
     id: 14,
     title: "T-Shirt 14",
     description: "Beauty World T-shirt",
-    price: 19.9,
+    price: 14.99,
     images: {
       preview: "image/products/Product-14-Preview.png",
       model: [
@@ -225,7 +225,7 @@ export const productData: ProductDataProps[] = [
     id: 15,
     title: "T-Shirt 15",
     description: "Isolated T-shirt",
-    price: 19.9,
+    price: 14.99,
     images: {
       preview: "image/products/Product-15-Preview.png",
       model: [
