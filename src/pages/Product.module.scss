@@ -40,15 +40,15 @@
     button {
       padding: 1rem;
       font-size: 1.75rem;
-      background-color: $button-bg-color;
+      background-color: $Gray;
       backdrop-filter: blur(15px);
-      border: 1px solid $button-border-color;
+      border: 1px solid $LightGray;
       border-radius: 1rem;
       transition: 0.3s;
       cursor: pointer;
 
       &:hover {
-        background-color: $button-hover-color;
+        background-color: $LightGray;
       }
     }
   }

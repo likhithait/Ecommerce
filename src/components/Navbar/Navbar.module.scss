@@ -7,17 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  user-select: none;
   position: fixed;
   top: 0;
   margin: 0;
-  transition: 0.6s;
+  user-select: none;
   z-index: 10;
-
-  &.scroll {
-    background-color: #0a0d0e20;
-    backdrop-filter: blur(15px);
-  }
+  transition: 0.3s;
 
   .logo {
     a {
@@ -30,6 +25,7 @@
 
       h1 {
         font-size: 2.5rem;
+        color: $White;
       }
     }
   }
@@ -43,9 +39,26 @@
       justify-content: center;
 
       a {
-        @include button();
+        padding: 1rem;
+        line-height: 1rem;
+        font-size: 1.75rem;
+        background-color: $Gray30;
+        border: 1px solid #cfd8dc00;
+        border-radius: 1rem;
+        cursor: pointer;
+        user-select: none;
+        text-align: center;
+        color: $White;
         position: relative;
         transition: 0.3s;
+
+        &:hover {
+          background-color: $LightGray50;
+        }
+
+        path {
+          color: $White;
+        }
 
         span {
           position: absolute;
@@ -56,13 +69,36 @@
           font-size: 0.875rem;
           font-weight: 500;
           line-height: 0.875rem;
-          background-color: $primary-color;
+          color: $White;
+          background-color: $PrimaryColor;
           border-radius: 1rem;
 
           &.zero {
             display: none;
           }
         }
+      }
+    }
+  }
+
+  &.scroll {
+    background-color: $White;
+    box-shadow: 0 0 20px 0 #0a0d0e50;
+
+    .logo h1 {
+      color: $Black;
+    }
+
+    li a {
+      background: transparent;
+      border: 1px solid $Gray;
+
+      path {
+        color: $Black;
+      }
+
+      &:hover {
+        background-color: $Gray;
       }
     }
   }
@@ -87,4 +123,15 @@
       }
     }
   }
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 500px;
+  z-index: -1;
+  overflow-x: hidden;
+  background: linear-gradient(0deg, $White 5%, #0a0d0e25 100%) #0a0d0e75;
 }

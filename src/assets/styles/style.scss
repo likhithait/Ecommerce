@@ -1,13 +1,13 @@
 @import "variables";
 
 ::selection {
-  color: $text-color;
-  background-color: $primary-color;
+  color: $White;
+  background-color: $PrimaryColor;
 }
 
 body {
   font-family: "Prompt", sans-serif;
-  background-color: $bg-color;
+  background-color: $White;
   overflow-x: hidden;
 }
 

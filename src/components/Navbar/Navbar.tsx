@@ -15,28 +15,31 @@ const Navbar = () => {
   const scrollPosition = useScrollPosition();
 
   return (
-    <nav
-      className={`${styles.navbar} container ${
-        scrollPosition > 50 && `${styles.scroll}`
-      }`}
-    >
-      <div className={styles.logo}>
-        <Link to="/">
-          <img src="/favicon.svg" />
-          <h1>S4U</h1>
-        </Link>
-      </div>
-      <ul className={styles.link_group}>
-        <li>
-          <Link to="/cart">
-            <FaShoppingCart title="Cart" />
-            <span className={totalCart === 0 ? `${styles.zero}` : ""}>
-              {totalCart}
-            </span>
+    <>
+      <nav
+        className={`${styles.navbar} container ${
+          scrollPosition > 40 ? `${styles.scroll}` : ""
+        }`}
+      >
+        <div className={styles.logo}>
+          <Link to="/">
+            <img src="/favicon.svg" />
+            <h1>S4U</h1>
           </Link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+        <ul className={styles.link_group}>
+          <li>
+            <Link to="/cart" title="Cart">
+              <FaShoppingCart />
+              <span className={totalCart === 0 ? `${styles.zero}` : ""}>
+                {totalCart}
+              </span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.bg}></div>
+    </>
   );
 };
 

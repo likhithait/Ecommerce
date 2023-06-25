@@ -5,9 +5,9 @@
   width: 100%;
   padding: 1rem;
   margin: 1rem 0;
-  background-color: $button-bg-color;
+  background-color: $Gray;
   backdrop-filter: blur(15px);
-  border: 1px solid $button-border-color;
+  border: 1px solid $LightGray;
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -47,9 +47,9 @@
           padding: 1rem;
           line-height: 1rem;
           font-size: 1.75rem;
-          background-color: $button-bg-color;
+          background-color: $Gray;
           backdrop-filter: blur(15px);
-          border: 1px solid $button-border-color;
+          border: 1px solid $LightGray;
           text-align: center;
         }
 
