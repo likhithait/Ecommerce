@@ -9,7 +9,7 @@ import Page404 from "./Page404";
 const Product = () => {
   const { productID } = useParams<{ productID: string }>();
   const haveProduct =
-    Number(productID) >= 0 && Number(productID) < productData.length;
+    Number(productID) >= 0 && Number(productID) <= productData.length;
 
   return haveProduct ? <ShowProduct productID={productID} /> : <Page404 />;
 };
