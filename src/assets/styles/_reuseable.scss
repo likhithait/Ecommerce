@@ -1,13 +1,5 @@
 @import "variables";
 
-@mixin shape($size, $color, $opacity) {
-  width: $size;
-  height: $size;
-  background: $color;
-  border-radius: 50%;
-  opacity: $opacity;
-}
-
 @mixin button {
   padding: 1rem;
   line-height: 1rem;

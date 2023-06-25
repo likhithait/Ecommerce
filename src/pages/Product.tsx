@@ -1,5 +1,5 @@
 // Import hook
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 // Import context
 import { CartContext } from "../context/CartContext";
@@ -13,18 +13,52 @@ import styles from "./Product.module.scss";
 const Product = () => {
   const { increaseCart } = useContext(CartContext);
   const { productID } = useParams<{ productID: string }>();
+
   const product = productData.filter(
     (product) => product.id === Number(productID)
   );
-
   const { title, description, price, images } = product[0];
+
+  const imgs = [
+    images.preview,
+    images.model[0],
+    images.model[1],
+    images.model[2],
+    images.design,
+  ];
+
+  const [previewImage, setPreviewImage] = useState(imgs[0]);
+
+  const handleImagesClick = (index) => {
+    setPreviewImage(imgs[index]);
+  };
 
   return (
     <>
       <div className="container">
         <div className={styles.product}>
           <div className={styles.img}>
-            <img src={`../${images.preview}`} alt={title} />
+            <div className={styles.bigImg}>
+              <img src={`../${previewImage}`} alt={title} draggable="false" />
+            </div>
+            <div className={styles.selectImg}>
+              {imgs.map((img, index) => (
+                <div
+                  className={`${styles.smallImg} ${
+                    previewImage === img ? `${styles.active}` : ""
+                  }`}
+                  key={index}
+                >
+                  <img
+                    src={`../${img}`}
+                    onClick={() => {
+                      handleImagesClick(index);
+                    }}
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className={styles.detail}>
             <div className="top">
@@ -33,9 +67,20 @@ const Product = () => {
             </div>
             <div className="bottom">
               <p className={styles.price}>${price}</p>
-              <button onClick={() => increaseCart(Number(productID))}>
-                Add to cart
-              </button>
+              <div className={styles.button_group}>
+                <button
+                  className={styles.buy_now}
+                  onClick={() => alert("Can't buy now")}
+                >
+                  Buy now
+                </button>
+                <button
+                  className={styles.add_to_cart}
+                  onClick={() => increaseCart(Number(productID))}
+                >
+                  Add to cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
