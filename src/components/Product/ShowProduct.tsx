@@ -9,7 +9,11 @@ import Background from "../Background/Background";
 // Import styles
 import styles from "./ShowProduct.module.scss";
 
-const Product = ({ productID }) => {
+interface ProductProps {
+  productID: string;
+}
+
+const Product: React.FC<ProductProps> = ({ productID }) => {
   const { increaseCart, cart } = useContext(CartContext);
 
   const product = productData.filter(

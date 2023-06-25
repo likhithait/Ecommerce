@@ -96,6 +96,7 @@
     box-shadow: 0 0 20px 0 #0a0d0e20;
     background-color: $LightGray;
     border: 1px solid $LightGray;
+    user-select: none;
 
     &:hover {
       background-color: $Gray;

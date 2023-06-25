@@ -79,6 +79,7 @@
     .button_group {
       display: flex;
       gap: 20px;
+      user-select: none;
 
       button {
         padding: 1rem;

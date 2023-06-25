@@ -9,8 +9,9 @@ import CartItem from "../components/CartItem/CartItem";
 // Import styles
 import styles from "./Cart.module.scss";
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const { cart, clearCart, totalCart, totalPrice } = useContext(CartContext);
+
   return (
     <div className="container">
       <div className={styles.cart}>

@@ -31,6 +31,7 @@
       color: $White;
       background-color: $PrimaryColor;
       border: 1px solid $PrimaryColor;
+      user-select: none;
 
       &:hover {
         background-color: $SecondaryColor;
