@@ -23,6 +23,7 @@ const CartItem: React.FC = ({ item }) => {
         </div>
         <div className={styles.detail}>
           <h1>{title}</h1>
+          <p>Price: ${price.toFixed(2)}</p>
           <div className={styles.amount}>
             <button
               className={styles.decrease}
@@ -41,7 +42,7 @@ const CartItem: React.FC = ({ item }) => {
         </div>
       </div>
       <div className={styles.price}>
-        <h1>${(item.amount * price).toFixed(2)}</h1>
+        <h1>Total: ${(item.amount * price).toFixed(2)}</h1>
       </div>
       {/* <p>x</p> */}
     </div>

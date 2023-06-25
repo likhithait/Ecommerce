@@ -1,5 +1,3 @@
-// Import components
-import Background from "../Background/Background";
 // Import styles
 import styles from "./Header.module.scss";
 
