@@ -10,7 +10,7 @@ import CartItem from "../components/CartItem/CartItem";
 import styles from "./Cart.module.scss";
 
 const Cart = () => {
-  const { cart, clearCart, totalCart } = useContext(CartContext);
+  const { cart, clearCart, totalCart, totalPrice } = useContext(CartContext);
   return (
     <div className="container">
       <div className={styles.cart}>
@@ -19,6 +19,7 @@ const Cart = () => {
             {cart.map((item) => {
               return <CartItem key={item.id} item={item} />;
             })}
+            <h1 className={styles.total}>Total: ${totalPrice.toFixed(2)}</h1>
             <div className={styles.button_group}>
               <Link to="/">Continue Shopping</Link>
               <div>

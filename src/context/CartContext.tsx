@@ -1,4 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
+// import data
+import { productData } from "../data/productData";
 
 interface CartItemProps {
   id: number;
@@ -17,6 +19,7 @@ export const CartContext = createContext<CartContextProps | null>(null);
 
 export const CartContextProvider: React.FC = ({ children }) => {
   const [totalCart, setTotalCart] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [cart, setCart] = useState<CartItemProps[]>(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -28,7 +31,8 @@ export const CartContextProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-    total();
+    sumAmount();
+    sumPrice();
   }, [cart]);
 
   const increaseCart = (id: number) => {
@@ -82,12 +86,22 @@ export const CartContextProvider: React.FC = ({ children }) => {
     setCart(newCart);
   };
 
-  const total = () => {
+  const sumAmount = () => {
     let sum = 0;
     cart.forEach((item) => {
       sum += Number(item.amount);
     });
     setTotalCart(sum);
+  };
+
+  const sumPrice = () => {
+    let sum = 0;
+    cart.forEach((item) => {
+      productData.forEach((product) => {
+        sum += Number(item.amount) * product.price;
+      });
+    });
+    setTotalPrice(sum);
   };
 
   const handleAmountChange = (id: number, value: number) => {
@@ -117,6 +131,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
     decreaseCart,
     removeCart,
     totalCart,
+    totalPrice,
     handleAmountChange,
     clearCart,
   };
