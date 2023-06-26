@@ -6,20 +6,13 @@ This E-Commerce Website has been developed using ReactJS.
 
 ![Preview](https://github.com/parunchxi/React-Simple-Ecommerce-Website/assets/127289841/949b7a55-e3e6-4339-b97c-907fbfa7dc55)
 
-## Installation
+## Commands
 
-Clone this repository and install dependencies.
+Run these commands from the project's root directory using a terminal.
 
-        npm install
-
-### Development
-
-        npm run dev
-
-### Building the App
-
-        npm run build
-
-### Testing the App Locally
-
-        npm run preview
+| Command           | Description                                                       |
+| :---------------- | :---------------------------------------------------------------- |
+| `npm install`     | Installs project dependencies.                                    |
+| `npm run dev`     | Starts the local development server at `localhost:3000`.          |
+| `npm run build`   | Builds the production site in the `dist` directory.               |
+| `npm run preview` | Previews the build locally at `localhost:8080` before deployment. |
