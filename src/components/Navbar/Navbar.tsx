@@ -1,18 +1,17 @@
-// Import hook
 import { useContext } from "react";
-import { useScrollPosition } from "../../hook/useScrollPosition";
-// Import context
-import { CartContext } from "../../context/CartContext";
-// Import link
 import { Link } from "react-router-dom";
-// Import icons
-import { FaShoppingCart } from "react-icons/fa";
-// Import styles
-import styles from "./Navbar.module.scss";
+import { useScrollPosition } from "../../hook/useScrollPosition"; // Custom Hook
+import { CartContext } from "../../context/CartContext"; // Context
+import { FaShoppingCart } from "react-icons/fa"; // Icons
+import styles from "./Navbar.module.scss"; //Styles
 
 const Navbar = () => {
-  const { totalCart } = useContext(CartContext);
   const scrollPosition = useScrollPosition();
+  const context = useContext(CartContext);
+  if (!context) {
+    return;
+  }
+  const { totalCart } = context;
 
   return (
     <>

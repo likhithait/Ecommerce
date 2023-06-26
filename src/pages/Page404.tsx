@@ -1,7 +1,5 @@
-// Import link
 import { Link } from "react-router-dom";
-// Import styles
-import styles from "./Page404.module.scss";
+import styles from "./Page404.module.scss"; // Styles
 
 const Page404 = () => {
   return (

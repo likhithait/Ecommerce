@@ -1,7 +1,6 @@
-// Import styles
-import styles from "./Header.module.scss";
+import styles from "./Header.module.scss"; // Styles
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">

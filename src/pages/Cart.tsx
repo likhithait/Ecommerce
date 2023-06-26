@@ -1,23 +1,25 @@
-// Import hook
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-// Import context
-import { CartContext } from "../context/CartContext";
-// Import components
+import { CartContext, CartItemProps } from "../context/CartContext"; // Context
 import Background from "../components/Background/Background";
 import CartItem from "../components/CartItem/CartItem";
-// Import styles
-import styles from "./Cart.module.scss";
+import styles from "./Cart.module.scss"; // Styles
 
-const Cart: React.FC = () => {
-  const { cart, clearCart, totalCart, totalPrice } = useContext(CartContext);
+const Cart = () => {
+  const context = useContext(CartContext);
+
+  if (!context) {
+    return;
+  }
+
+  const { cart, clearCart, totalCart, totalPrice } = context;
 
   return (
     <div className="container">
       <div className={styles.cart}>
         {totalCart > 0 ? (
           <>
-            {cart.map((item) => {
+            {cart.map((item: CartItemProps) => {
               return <CartItem key={item.id} item={item} />;
             })}
             <h1 className={styles.total}>Total: ${totalPrice.toFixed(2)}</h1>

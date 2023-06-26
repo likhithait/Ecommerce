@@ -1,12 +1,9 @@
-// import data
-import { productData } from "../../data/productData";
-// Import components
+import { productData, ProductDataProps } from "../../data/productData"; // Data
 import ShopCard from "./ShopCard";
-// Import styles
-import styles from "./Shop.module.scss";
+import styles from "./Shop.module.scss"; // style
 
-const Shop: React.FC = () => {
-  const shopItem = productData.map((product) => {
+const Shop = () => {
+  const shopItem = productData.map((product: ProductDataProps) => {
     return <ShopCard key={product.id} product={product} />;
   });
 

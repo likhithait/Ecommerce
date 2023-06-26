@@ -1,7 +1,6 @@
-// Import styles
-import styles from "./Background.module.scss";
+import styles from "./Background.module.scss"; // Styles
 
-const Background: React.FC = () => {
+const Background = () => {
   return <div className={styles.bg}></div>;
 };
 

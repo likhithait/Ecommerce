@@ -1,20 +1,18 @@
-// Import hook
 import { useContext, useState } from "react";
-// Import context
-import { CartContext } from "../../context/CartContext";
-// import data
-import { productData } from "../../data/productData";
-// Import components
+import { CartContext } from "../../context/CartContext"; // Context
+import { productData } from "../../data/productData"; // Data
 import Background from "../Background/Background";
-// Import styles
-import styles from "./ShowProduct.module.scss";
+import styles from "./ShowProduct.module.scss"; // style
 
 interface ProductProps {
   productID: string;
 }
-
 const Product: React.FC<ProductProps> = ({ productID }) => {
-  const { increaseCart, cart } = useContext(CartContext);
+  const context = useContext(CartContext);
+  if (!context) {
+    return;
+  }
+  const { increaseCart, cart } = context;
 
   const product = productData.filter(
     (product) => product.id === Number(productID)
@@ -25,7 +23,7 @@ const Product: React.FC<ProductProps> = ({ productID }) => {
 
   const { title, description, price, images } = product[0];
 
-  const imgs = [
+  const imgs: string[] = [
     images.preview,
     images.model[0],
     images.model[1],
@@ -35,7 +33,7 @@ const Product: React.FC<ProductProps> = ({ productID }) => {
 
   const [previewImage, setPreviewImage] = useState(imgs[0]);
 
-  const handleImagesClick = (index) => {
+  const handleImagesClick = (index: number) => {
     setPreviewImage(imgs[index]);
   };
 

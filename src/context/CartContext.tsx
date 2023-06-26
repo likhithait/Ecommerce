@@ -1,23 +1,32 @@
-import React, { createContext, useEffect, useState } from "react";
-// import data
+import React, { createContext, useEffect, useState, useCallback } from "react";
 import { productData } from "../data/productData";
 
-interface CartItemProps {
+// Props type
+interface CartContextProviderProps {
+  children: React.ReactNode;
+}
+
+export interface CartItemProps {
   id: number;
   amount: number;
 }
 
-interface CartContextProps {
+export interface CartContextProps {
   cart: CartItemProps[];
   increaseCart: (id: number) => void;
   decreaseCart: (id: number) => void;
   removeCart: (id: number) => void;
   totalCart: number;
+  totalPrice: number;
+  handleAmountChange: (id: number, value: number) => void;
+  clearCart: () => void;
 }
 
 export const CartContext = createContext<CartContextProps | null>(null);
 
-export const CartContextProvider: React.FC = ({ children }) => {
+export const CartContextProvider: React.FC<CartContextProviderProps> = ({
+  children,
+}) => {
   const [totalCart, setTotalCart] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [cart, setCart] = useState<CartItemProps[]>(() => {
@@ -29,11 +38,29 @@ export const CartContextProvider: React.FC = ({ children }) => {
     }
   });
 
+  const sumAmount = useCallback(() => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += Number(item.amount);
+    });
+    setTotalCart(sum);
+  }, [cart]);
+
+  const sumPrice = useCallback(() => {
+    let sum = 0;
+    cart.forEach((item) => {
+      productData.forEach((product) => {
+        sum += Number(item.amount) * product.price;
+      });
+    });
+    setTotalPrice(sum);
+  }, [cart]);
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     sumAmount();
     sumPrice();
-  }, [cart]);
+  }, [cart, sumAmount, sumPrice]);
 
   const increaseCart = (id: number) => {
     const selectProduct = cart.find((item: CartItemProps) => item.id === id);
@@ -86,24 +113,6 @@ export const CartContextProvider: React.FC = ({ children }) => {
     setCart(newCart);
   };
 
-  const sumAmount = () => {
-    let sum = 0;
-    cart.forEach((item) => {
-      sum += Number(item.amount);
-    });
-    setTotalCart(sum);
-  };
-
-  const sumPrice = () => {
-    let sum = 0;
-    cart.forEach((item) => {
-      productData.forEach((product) => {
-        sum += Number(item.amount) * product.price;
-      });
-    });
-    setTotalPrice(sum);
-  };
-
   const handleAmountChange = (id: number, value: number) => {
     const selectProduct = cart.find((item: CartItemProps) => item.id === id);
     if (selectProduct) {
@@ -121,7 +130,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
     }
   };
 
-  const clearCart = (id: number) => {
+  const clearCart = () => {
     setCart([]);
   };
 

@@ -1,26 +1,20 @@
-// Import hook
-import { useContext } from "react";
+import { useContext, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
-// Import context
-import { CartContext } from "../../context/CartContext";
-// import data
-import { productData } from "../../data/productData";
-// Import icons
-import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
-// Import styles
-import styles from "./CartItem.module.scss";
+import { CartContext, CartItemProps } from "../../context/CartContext"; // Context
+import { productData } from "../../data/productData"; // Data
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa"; // Icons
+import styles from "./CartItem.module.scss"; // Styles
 
-const CartItem: React.FC = ({ item }) => {
-  const {
-    increaseCart,
-    decreaseCart,
-    removeCart,
-    totalCart,
-    handleAmountChange,
-  } = useContext(CartContext);
+const CartItem = ({ item }: { item: CartItemProps }) => {
+  const context = useContext(CartContext);
+  if (!context) {
+    return;
+  }
+  const { increaseCart, decreaseCart, removeCart, handleAmountChange } =
+    context;
 
   const product = productData.filter((product) => product.id === item.id);
-  const { title, description, price, images } = product[0];
+  const { title, price, images } = product[0];
 
   return (
     <div className={styles.card}>
@@ -46,8 +40,9 @@ const CartItem: React.FC = ({ item }) => {
               <input
                 type="number"
                 value={item.amount}
-                onChange={(event) => {
-                  handleAmountChange(item.id, event.target.value);
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  const amount = Number(event.target.value);
+                  handleAmountChange(item.id, amount);
                 }}
               />
               <button
