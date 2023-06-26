@@ -31,7 +31,7 @@ const Product: React.FC<ProductProps> = ({ productID }) => {
     images.design,
   ];
 
-  const [previewImage, setPreviewImage] = useState(imgs[0]);
+  const [previewImage, setPreviewImage] = useState<string>(() => imgs[0]);
 
   const handleImagesClick = (index: number) => {
     setPreviewImage(imgs[index]);
