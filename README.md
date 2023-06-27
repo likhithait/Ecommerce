@@ -2,12 +2,18 @@
 
 This E-Commerce Website has been developed using ReactJS.
 
-## Preview
+## Feature
+- Add to card
+- Remove from card
+- Preview Product
 
+## Preview
 ![Preview](https://github.com/parunchxi/React-Simple-Ecommerce-Website/assets/127289841/949b7a55-e3e6-4339-b97c-907fbfa7dc55)
 
-## Commands
+## Requirement
+- Node.js
 
+## Commands
 Run these commands from the project's root directory using a terminal.
 
 | Command           | Description                                                       |
