@@ -2,7 +2,7 @@
 
 This E-Commerce Website has been developed using ReactJS.
 
-## Feature
+## Features
 - Add to card
 - Remove from card
 - Preview Product
