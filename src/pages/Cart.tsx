@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext, CartItemProps } from "../context/CartContext"; // Context
 import Background from "../components/Background/Background";
 import CartItem from "../components/CartItem/CartItem";
+import { productData } from "../data/productData"; // Import product data
 import styles from "./Cart.module.scss"; // Styles
 
 const Cart = () => {
@@ -13,6 +14,33 @@ const Cart = () => {
   }
 
   const { cart, clearCart, totalCart, totalPrice } = context;
+
+  // Function to generate WhatsApp message
+  const generateWhatsAppMessage = () => {
+    let message = "Hello, I would like to purchase the following items:\n\n";
+
+    cart.forEach((item: CartItemProps) => {
+      // Find the product based on the item id
+      const product = productData.find((product) => product.id === item.id);
+
+      if (product) {
+        message += `${product.title} (x${item.amount}) - $${(item.amount * product.price).toFixed(2)}\n`;
+      }
+    });
+
+    message += `\nTotal: $${totalPrice.toFixed(2)}\n\nPlease contact me for further details.`;
+
+    // WhatsApp link format
+    const phoneNumber = "+919550458189"; // Replace with your WhatsApp number
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
+
+  // Handle checkout by opening WhatsApp
+  const handleCheckout = () => {
+    const whatsappLink = generateWhatsAppMessage();
+    window.open(whatsappLink, "_blank"); // Open WhatsApp with the generated message
+  };
 
   return (
     <div className="container">
@@ -31,7 +59,7 @@ const Cart = () => {
                 </button>
                 <button
                   className={styles.check_out}
-                  onClick={() => alert("Can't check out now")}
+                  onClick={handleCheckout} // Updated to call handleCheckout
                 >
                   Check Out
                 </button>
