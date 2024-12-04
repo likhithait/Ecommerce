@@ -5,10 +5,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className="container">
         <h1>
-          New Style | Simple E-Commerce Website |{" "}
-          <a href="https://github.com/parunchxi/React-Simple-Ecommerce-Website">
-            Github
-          </a>
+          Styles 4 You {" "}
         </h1>
       </div>
       <div className={styles.bg}></div>
